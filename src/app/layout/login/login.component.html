@@ -1,0 +1,22 @@
+<div class="row display-center m-t-50">
+    <div class="col-sm-4">
+      <div class="card m-l-10">
+        <div class="card-body">
+          <h4 class="card-title mb-4 mt-1">Sign in</h4>
+          <form [formGroup]="loginForm">
+            <div class="form-group">
+              <label>Your email</label>
+              <input name="" formControlName="useremail" class="form-control" placeholder="Email" type="email">
+            </div>
+            <div class="form-group">
+              <label>Your password</label>
+              <input class="form-control" formControlName="userpassword" placeholder="******" type="password">
+            </div>
+            <div class="form-group">
+              <button type="submit" (click)="login()" class="btn btn-primary btn-block"> Login </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

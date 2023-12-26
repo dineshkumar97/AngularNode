@@ -21,10 +21,9 @@ export class LoginComponent implements OnInit {
 
 
   public initilization(): void {
-    // this.loginService.getPosts().subscribe((response: any) => {
-    //   console.log('rrrrrrr,re', response)
-    // })
     this.loadLogin();
+    this.loadUserDetails();
+
   }
 
   public loadLogin(): void {
@@ -35,15 +34,21 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
-    console.log('public', this.loginForm.value)
     const login = {
       email: this.loginForm.value.useremail,
       password: this.loginForm.value.userpassword,
     }
     this.loginService.authLogin(login).subscribe((response: any) => {
-      console.log('login,re', response)
+      const authToken = response.token; 
+      this.loginService.setAuthToken(authToken);
+      this.loadUserDetails();
     });
   }
 
+  loadUserDetails(): void {
+    this.loginService.userlist().subscribe((response: any) => {
+      console.log('login,re', response)
+    });
+  }
 
 }

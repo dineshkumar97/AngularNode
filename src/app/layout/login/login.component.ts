@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup
 
-  constructor(private loginService: LoginService, private fb: FormBuilder) {
+  constructor(private loginService: LoginService, private fb: FormBuilder,private router: Router) {
 
   }
 
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   public initilization(): void {
     this.loadLogin();
-    this.loadUserDetails();
+    // this.loadUserDetails();
 
   }
 
@@ -41,14 +42,11 @@ export class LoginComponent implements OnInit {
     this.loginService.authLogin(login).subscribe((response: any) => {
       const authToken = response.token; 
       this.loginService.setAuthToken(authToken);
-      this.loadUserDetails();
+      localStorage.setItem('authToken',authToken);
+      this.router.navigate(['/users/userDetails'])
     });
   }
 
-  loadUserDetails(): void {
-    this.loginService.userlist().subscribe((response: any) => {
-      console.log('login,re', response)
-    });
-  }
+
 
 }

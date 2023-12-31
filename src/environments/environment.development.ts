@@ -3,7 +3,7 @@ const scheme = 'http://';
 const host   = 'localhost';
 const port   = ':3000';
 const path   = '/api';
-const baseUrl = scheme + host + port + path;
+const baseUrl = `${scheme}${host}${port}${path}`;
 
 export const environment = {
   production      : true,

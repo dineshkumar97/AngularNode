@@ -22,21 +22,7 @@ export class LoginService {
     this.authTokenSubject.next(token);
   }
 
-  // get checkLoggeds(): Observable<boolean | null> {
-  //   return this.isloggedIn.asObservable();
-  // }
-  // isUserLoggedIn(checkLogged: boolean | null): void {
-  //   console.log('seee',checkLogged)
-  //   this.checkLogged.next(checkLogged);
-  //   this.isloggedIn.next(false);
-  // }
-
- 
-
-
-
   userlist(): Observable<any> {
-    console.log('eve',environment)
     return this.http.get<any>(`${environment.apiBaseUrl}/getUserDetails`);
   }
 

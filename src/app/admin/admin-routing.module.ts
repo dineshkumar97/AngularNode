@@ -4,14 +4,16 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { AuthGuard } from '../authservice/auth.guard';
 import { UserDetailListComponent } from './user-detail-list/user-detail-list.component';
 import { UserCreateComponent } from './user-create/user-create.component';
+import { EnquiryListComponent } from './enquiry-list/enquiry-list.component';
 
 const routes: Routes = [
   {
     path: '', component: SideMenuComponent,
     children: [
       { path: 'member', component: SideMenuComponent, canActivate: [AuthGuard] },
-      { path: 'userDetails', component: UserDetailListComponent, canActivate: [AuthGuard] },
-      { path: 'userCreate', component: UserCreateComponent, canActivate: [AuthGuard] },
+      { path: 'user-details', component: UserDetailListComponent, canActivate: [AuthGuard] },
+      { path: 'user-create', component: UserCreateComponent, canActivate: [AuthGuard] },
+      { path: 'enquiry-list', component: EnquiryListComponent, canActivate: [AuthGuard] },
     ]
   }
 ];

@@ -1,18 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
-.display-center{
-    align-content: center;
-    justify-content: center;
-    margin: 0;
-}
-
-.m-l-10{
-    margin-left: 10px;
-}
-
-.m-t-50{
-    margin-top: 50px;
-}
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -56,6 +44,20 @@ body.dark{
     --dark:#fbfbfb;
 }
 
+.display-center{
+    align-content: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.m-l-10{
+    margin-left: 10px;
+}
+
+.m-t-50{
+    margin-top: 50px;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -63,7 +65,7 @@ body.dark{
     background: var(--light) !important;
     height: 100%;
     width: 280px;
-    z-index: 2000;
+    // z-index: 2000;
     font-family: var(--lato) !important;
     transition: 0.3s ease;
     overflow-x: hidden;
@@ -397,7 +399,7 @@ body.dark{
   padding: 16px 0;
    }
 
-   .content main  .table-data .order table td:first-child{
+   .content main  .table-data .order table td:nth-child(2) {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -428,4 +430,30 @@ body.dark{
 
  .user-name{
     margin: 0px;
+ }
+
+ .create-btn{
+    font-size: 12px;
+    padding: 6px 16px;
+    color: var(--light);
+    border-radius: 2px;
+    font-weight: 700;
+    background: var(--blue);
+    border: none;
+    cursor: pointer;
+ }
+ .form-control.is-invalid{
+    background-image: none !important;
+ }
+
+ .m-l-10{
+    margin-left: 10px;
+ }
+ .curor-pointer{
+    cursor: pointer;
+ }
+
+ .text-center{
+    text-align: center;
+    margin-top: 10px;
  }

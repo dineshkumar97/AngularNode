@@ -27,7 +27,6 @@ export class SideMenuComponent implements OnInit {
   }
 
   routingEvent(event: any) {
-    console.log('eee', event)
     if (event == 'user') {
       this.router.navigate(['/users/userDetails'])
     } else if (event == 'create') {

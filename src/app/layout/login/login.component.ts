@@ -23,8 +23,6 @@ export class LoginComponent implements OnInit {
 
   public initilization(): void {
     this.loadLogin();
-    // this.loadUserDetails();
-
   }
 
   public loadLogin(): void {
@@ -42,8 +40,8 @@ export class LoginComponent implements OnInit {
     this.loginService.authLogin(login).subscribe((response: any) => {
       const authToken = response.token; 
       this.loginService.setAuthToken(authToken);
-      localStorage.setItem('authToken',authToken);
-      this.router.navigate(['/users/userDetails'])
+      sessionStorage.setItem('authToken',authToken);
+      this.router.navigate(['/users/enquiry-list'])
     });
   }
 

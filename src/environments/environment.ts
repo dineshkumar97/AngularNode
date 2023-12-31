@@ -1,17 +1,13 @@
 import { EnvName } from '@enums/environment.enum';
 const scheme = 'http://';
 const host   = 'localhost';
-const port   = ':5000';
+const port   = ':3000';
 const path   = '/api';
-
-const baseUrl = scheme + host + port + path;
-
+const baseUrl = `${scheme}${host}${port}${path}`;
 export const environment = {
-  production      : false,
+  production      : true,
   appName         : 'EasyAngular',
-  envName         : EnvName.LOCAL,
+  envName         : EnvName.PROD,
   defaultLanguage : 'en',
   apiBaseUrl      : baseUrl,
-  apiUrl : 'http://localhost:3000/api'
 };
-

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToasterService } from 'src/app/toster/toaster.service';
 
 @Component({
   selector: 'app-member-create',
@@ -11,7 +12,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class MemberCreateComponent implements OnInit {
 
 
-  constructor(private adminService: AdminService, private router: Router, private fb: FormBuilder, private route: ActivatedRoute) {
+  constructor(private adminService: AdminService, private router: Router,
+    private toaster:ToasterService,
+    private fb: FormBuilder, private route: ActivatedRoute) {
     let id = this.route.snapshot.paramMap.get('id');
     if (id != null) {
       this.loadMemberParticular(id);
@@ -86,9 +89,11 @@ export class MemberCreateComponent implements OnInit {
         let final = Object.assign({}, this.memeberForm.value, json)
         this.adminService.memberUpdate(this.memberPaticularDetail._id, final).subscribe({
           next: (posts) => {
+            this.toaster.showSuccess(posts.message);
             this.router.navigate(['/users/member-list'])
           },
           error: (error) => {
+            this.toaster.showError(error);
           },
         });
       }

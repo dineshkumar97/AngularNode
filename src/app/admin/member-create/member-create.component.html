@@ -3,6 +3,7 @@
         <div class="head">
             <h3>Member</h3>
         </div>
+
         <form [formGroup]="memeberForm">
             <div class="form first">
                 <div class="details personal">
@@ -17,8 +18,8 @@
                         </div>
                         <div class="input-field">
                             <label>Mobile No.</label>
-                            <input type="text" formControlName="mobileno" (keypress)="numberOnly($event)" [maxlength]="10"
-                                class="form-control"
+                            <input type="text" formControlName="mobileno" (keypress)="numberOnly($event)"
+                                [maxlength]="10" class="form-control"
                                 [ngClass]="{ 'is-invalid': formVale.mobileno.touched && formVale.mobileno.errors }" />
                             <div *ngIf="formVale.mobileno.touched && formVale.mobileno.errors" class="invalid-feedback">
                                 <div *ngIf="formVale.mobileno.errors.required">Mobile No. is required</div>
@@ -70,21 +71,20 @@
                                     <div *ngIf="formVale.gender.errors.required">Gender is required</div>
                                 </div>
                             </div>
-    
+
                         </div>
                     </div>
                     <div class="display-center">
                         <button class="nextBtn" type="button" (click)="cancelCreate()">
                             <span class="btnText">Cancel</span>
                         </button>
-                        <button class="nextBtn m-l-10"  type="button" (click)="createMember()">
+                        <button class="nextBtn m-l-10" type="button" (click)="createMember()">
                             <span class="btnText">Save</span>
                         </button>
                     </div>
                 </div>
-    
+
             </div>
         </form>
     </div>
-    
 </div>

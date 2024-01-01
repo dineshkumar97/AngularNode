@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToasterService } from 'src/app/toster/toaster.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup
 
-  constructor(private loginService: LoginService, private fb: FormBuilder,private router: Router) {
+  constructor(private loginService: LoginService, private fb: FormBuilder,private router: Router,
+    private toaster:ToasterService,
+    ) {
 
   }
 
@@ -38,10 +41,21 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.userpassword,
     }
     this.loginService.authLogin(login).subscribe((response: any) => {
-      const authToken = response.token; 
-      this.loginService.setAuthToken(authToken);
-      sessionStorage.setItem('authToken',authToken);
-      this.router.navigate(['/users/enquiry-list']);
+
+     
+    });
+    this.loginService.authLogin(login).subscribe({
+      next: (posts) => {
+        const authToken = posts.token; 
+        this.loginService.setAuthToken(authToken);
+        sessionStorage.setItem('authToken',authToken);
+        this.router.navigate(['/users/enquiry-list']);
+        this.toaster.showSuccess(posts.message);
+      },
+      error: (error) => {
+        // this.errorMessage = error;
+        this.toaster.showError(error);
+      },
     });
   }
 

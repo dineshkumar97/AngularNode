@@ -2,11 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { NgbActiveModal, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToasterService } from 'src/app/toster/toaster.service';
 
 @Component({
   selector: 'app-enquiry-list',
   templateUrl: './enquiry-list.component.html',
-  styleUrls: ['./enquiry-list.component.scss']
+  styleUrls: ['./enquiry-list.component.scss'],
 })
 export class EnquiryListComponent implements OnInit {
   @ViewChild('myModal') myModal: any;
@@ -15,7 +16,9 @@ export class EnquiryListComponent implements OnInit {
 
   constructor(private adminService: AdminService, private modalService: NgbModal,
     private fb: FormBuilder,
+    private toaster:ToasterService,
     public activeModal: NgbActiveModal) { }
+
   enquiryForm!: FormGroup;
   public enquiryList: any;
   public deleteInformation: any;
@@ -23,8 +26,6 @@ export class EnquiryListComponent implements OnInit {
   ngOnInit(): void {
     this.initilization();
   }
-
-
   public initilization(): void {
     this.getAllEnquiryDetails();
     this.loadCreateForm();
@@ -133,9 +134,12 @@ export class EnquiryListComponent implements OnInit {
       next: (posts) => {
         this.getAllEnquiryDetails();
         this.closePopup();
+        this.toaster.showSuccess(posts.message);
       },
       error: (error) => {
         // this.errorMessage = error;
+        this.toaster.showError(error);
+
       },
     });
   }

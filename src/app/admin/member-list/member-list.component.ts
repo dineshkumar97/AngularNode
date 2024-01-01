@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
 import { NgbActiveModal, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { ToasterService } from 'src/app/toster/toaster.service';
 @Component({
   selector: 'app-member-list',
   templateUrl: './member-list.component.html',
@@ -12,6 +13,7 @@ export class MemberListComponent implements OnInit {
   public modalOption: NgbModalOptions = {};
 
   constructor(private adminService: AdminService, private router: Router, private modalService: NgbModal,
+    private toaster:ToasterService,
     public activeModal: NgbActiveModal) { }
   public memberList: any;
   public deleteInformation: any
@@ -63,9 +65,11 @@ export class MemberListComponent implements OnInit {
       next: (posts) => {
         this.getAllMemberDetails();
         this.closePopup();
+        this.toaster.showSuccess(posts.message);
       },
       error: (error) => {
         // this.errorMessage = error;
+        this.toaster.showError(error);
       },
     });
   }

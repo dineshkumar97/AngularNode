@@ -1,7 +1,7 @@
 import { EnvName } from '@enums/environment.enum';
 const scheme = 'http://';
 const host   = 'localhost';
-const port   = ':3000';
+const port   = ':3001';
 const path   = '/api';
 const baseUrl = `${scheme}${host}${port}${path}`;
 

@@ -31,9 +31,14 @@ export class EnquiryListComponent implements OnInit {
   }
 
   public getAllEnquiryDetails(): void {
-    this.adminService.getAllEnquiryDetails().subscribe((response: any) => {
-      this.enquiryList = response.message;
-    })
+    this.adminService.getAllEnquiryDetails().subscribe({
+      next: (response) => {
+        this.enquiryList = response.message;
+      },
+      error: (error) => {
+        // this.errorMessage = error;
+      },
+    });
   }
 
   public loadCreateForm(): void {
@@ -86,9 +91,14 @@ export class EnquiryListComponent implements OnInit {
       return;
     } else {
       if (this.eventValue == 'create') {
-        this.adminService.createEnquiry(this.enquiryForm.value).subscribe((response: any) => {
-          this.getAllEnquiryDetails();
-          this.closePopup();
+        this.adminService.createEnquiry(this.enquiryForm.value).subscribe({
+          next: (posts) => {
+            this.getAllEnquiryDetails();
+            this.closePopup();
+          },
+          error: (error) => {
+            // this.errorMessage = error;
+          },
         });
       } else {
         let json = {
@@ -97,9 +107,14 @@ export class EnquiryListComponent implements OnInit {
           status: this.eventValues.status,
         }
         let final = Object.assign({}, this.enquiryForm.value, json)
-        this.adminService.enquiryUpdate(this.eventValues._id, final).subscribe((response: any) => {
-          this.getAllEnquiryDetails();
-          this.closePopup();
+        this.adminService.enquiryUpdate(this.eventValues._id, final).subscribe({
+          next: (posts) => {
+            this.getAllEnquiryDetails();
+            this.closePopup();
+          },
+          error: (error) => {
+            // this.errorMessage = error;
+          },
         });
       }
     }
@@ -114,10 +129,14 @@ export class EnquiryListComponent implements OnInit {
   }
 
   public deleteEnqiury(): void {
-    this.adminService.enquiryDelete(this.deleteInformation).subscribe((response: any) => {
-      this.getAllEnquiryDetails();
-      this.closePopup();
+    this.adminService.enquiryDelete(this.deleteInformation).subscribe({
+      next: (posts) => {
+        this.getAllEnquiryDetails();
+        this.closePopup();
+      },
+      error: (error) => {
+        // this.errorMessage = error;
+      },
     });
-
   }
 }

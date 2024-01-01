@@ -27,10 +27,10 @@ export class SideMenuComponent implements OnInit {
   }
 
   routingEvent(event: any) {
-    if (event == 'user') {
-      this.router.navigate(['/users/userDetails'])
-    } else if (event == 'create') {
-      this.router.navigate(['/users/userCreate'])
+    if (event == 'member') {
+      this.router.navigate(['/users/member-list'])
+    } else if (event == 'Enquiry') {
+      this.router.navigate(['/users/enquiry-list'])
     } else {
       this.router.navigate(['/login'])
       localStorage.clear();

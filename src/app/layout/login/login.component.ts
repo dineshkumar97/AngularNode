@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       const authToken = response.token; 
       this.loginService.setAuthToken(authToken);
       sessionStorage.setItem('authToken',authToken);
-      this.router.navigate(['/users/enquiry-list'])
+      this.router.navigate(['/users/enquiry-list']);
     });
   }
 

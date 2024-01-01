@@ -1,0 +1,58 @@
+<div class="table-data">
+    <div class="order">
+        <div class="head">
+            <h3>Member List</h3>
+            <button class="create-btn" (click)="createMember()">Add Member</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>User Name</th>
+                    <th>Mobile No.</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Registered Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of memberList;index as i">
+                    <td>{{i+1}}</td>
+                    <td>
+                        <img src="assets/img/profile.png" alt="" />
+                        <p class="user-name">{{member.username}} </p>
+                    </td>
+                    <td>{{member.mobileno}}</td>
+                    <td>{{member.age}}</td>
+                    <td>{{member.emailId}}</td>
+                    <td>{{member.gender}}</td>
+                    <td>{{member.address}}</td>
+                    <td>{{member.createdDate | date: 'dd-MMM-yyyy'}}</td>
+                    <td>{{member.status}}</td>
+                    <td><i class="fas fa-edit curor-pointer" (click)="editMember(member)" ></i>
+                        <i class="fa-solid fa-trash m-l-10 curor-pointer" (click)="confirmationDelete(member)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!memberList?.length" class="text-center">
+          <span> No data found...</span>
+       </div>
+    </div>
+    <ng-template #confirmation let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+            Are you sure to delete this member?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="closePopup()">No</button>
+            <button type="button" class="btn btn-outline-primary" (click)="deleteEnqiury()">Yes</button>
+        </div>
+    </ng-template>
+</div>

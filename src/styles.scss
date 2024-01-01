@@ -51,7 +51,7 @@ body.dark{
 }
 
 .m-l-10{
-    margin-left: 10px;
+    margin-left: 10px !important;
 }
 
 .m-t-50{
@@ -140,6 +140,13 @@ body.dark{
     width: calc(48px - (4px * 2));
     transition: 0.3 ease;
 }
+ul.side-menu.top {
+    padding-left: 0 !important;
+}
+ul.side-menu {
+    padding-left: 0 !important;
+}
+
 
 .sidebar.hide~.content {
     width: calc(100% - 60px);
@@ -457,3 +464,134 @@ body.dark{
     text-align: center;
     margin-top: 10px;
  }
+ .form-container .container-form{
+    max-width: 1400px;
+    width: 100%;
+}
+
+
+.form-container header{
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+}
+
+.form-container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 47px;
+    background: var(--blue);
+    border-radius: 8px;
+}
+
+.form-container form{
+    position: relative;
+    margin-top: 16px;
+}
+.form-container form .details{
+    margin-top: 30px;
+}
+.form-control{
+    background-color: var(--light);
+}
+
+.form-container form .title{
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+.form-container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-container form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark) !important;
+    margin-bottom: 0px !important;
+}
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+// hide input box shadow
+// .input-field input:is(:focus,:valid){
+//     box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+// }
+.input-field input[type="date"]{
+    color: var(--dark) !important;
+}
+
+.input-field input[type="date"]:valid{
+    color: var(--dark) !important;
+}
+
+
+.form-container form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    max-width: 100px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--light) !important;
+    border-radius: 5px;
+    margin: 25px 0;
+    background: var(--blue);
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+
+.display-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container form button:hover{
+    background: var(--blue);
+}
+.m-r-10{
+    margin-right: 10px;
+}
+.form-container form .fields .input-fields{
+    width: calc(33.333333% - 15px);
+}
+.input-fields label{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark) !important;
+    margin-bottom: 0px !important;
+}
+.radio-btn{
+    margin-top: 5px !important;
+}
+.displacy-block{
+    display: block !important;
+}

@@ -8,8 +8,9 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { MemberListComponent } from './member-list/member-list.component';
 import { MemberCreateComponent } from './member-create/member-create.component';
-import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
+import { PricingComponent } from './pricing/pricing.component';
+import { AboutComponent } from './about/about.component';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,15 @@ import { MessageService } from 'primeng/api';
     EnquiryListComponent,
     MemberListComponent,
     MemberCreateComponent,
+    PricingComponent,
+    AboutComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,ReactiveFormsModule,
-    ToastModule
+    NgToastModule
   ],
-  providers:[NgbActiveModal,MessageService]
+  providers:[NgbActiveModal]
 })
 export class AdminModule { }

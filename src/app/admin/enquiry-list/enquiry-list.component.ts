@@ -112,6 +112,7 @@ export class EnquiryListComponent implements OnInit {
           next: (posts) => {
             this.getAllEnquiryDetails();
             this.closePopup();
+               this.toaster.showSuccess(posts.message);
           },
           error: (error) => {
             // this.errorMessage = error;

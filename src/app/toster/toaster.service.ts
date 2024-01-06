@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { NgToastService } from 'ng-angular-popup';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToasterService {
 
-  constructor(private messageService: MessageService) {}
+  constructor( private toast: NgToastService) { }
 
-  public showSuccess(message:any):void {
-      this.messageService.add({ severity: 'success',key: "main", summary: 'Success', detail: message });
+  public showSuccess(message: any): void {
+    this.toast.success({ detail: "SUCCESS", summary: message, duration: 5000 });
   }
 
-  public showInfo(message:any):void {
-      this.messageService.add({ severity: 'info', key: "main",summary: 'Info', detail: message });
+  public showError(message: any): void {
+    this.toast.error({ detail: "ERROR", summary: message, duration: 5000 });
   }
 
-  public showWarn(message:any):void {
-      this.messageService.add({ severity: 'warn',key: "main", summary: 'Warn', detail: message });
+  public showInfo(message: any): void {
+    this.toast.info({ detail: "INFO", summary: message, duration: 5000 });
   }
 
-  public  showError(message:any):void {
-      this.messageService.add({ severity: 'error',key: "main", summary: 'Error', detail: message });
+  public showWarn(message: any): void {
+    this.toast.warning({ detail: "WARN", summary: message, duration: 5000 });
   }
-
 }

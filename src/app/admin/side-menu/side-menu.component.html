@@ -4,6 +4,31 @@
         <span class="text">Admin Panels</span>
     </a>
     <ul class="side-menu top" (click)="sideMenuChange()">
+      
+        <li (click)="routingEvent('About')">
+            <a class="nav-link">
+                <i class="fab fa-slack"></i>
+                <span class="text">About</span>
+            </a>
+        </li>
+        <li (click)="routingEvent('Pricing')">
+            <a class="nav-link">
+                <i class="fab fa-slack"></i>
+                <span class="text">Plan</span>
+            </a>
+        </li>
+        <li>
+            <a class="nav-link">
+                <i class="fab fa-slack"></i>
+                <span class="text">Classes / Schedule</span>
+            </a>
+        </li>
+        <li>
+            <a class="nav-link">
+                <i class="fab fa-slack"></i>
+                <span class="text">Contact us</span>
+            </a>
+        </li>
         <li class="active" (click)="routingEvent('Enquiry')">
             <a class="nav-link">
                 <i class="fab fa-slack"></i>
@@ -19,23 +44,11 @@
         <li>
             <a class="nav-link">
                 <i class="fab fa-slack"></i>
-                <span class="text">Dashboard3</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link">
-                <i class="fab fa-slack"></i>
-                <span class="text">Dashboard4</span>
+                <span class="text">Service</span>
             </a>
         </li>
     </ul>
     <ul class="side-menu">
-        <li>
-            <a>
-                <i class="fab fa-slack"></i>
-                <span class="text">Settings</span>
-            </a>
-        </li>
         <li>
             <a class="logout"(click)="routingEvent('logout')" >
                 <i class="fas fa-right-from-bracket"></i>

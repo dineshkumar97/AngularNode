@@ -8,8 +8,7 @@ import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AuthInterceptorInterceptor } from './auth-interceptor.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
+import { NgToastModule } from 'ng-angular-popup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +21,8 @@ import { MessageService } from 'primeng/api';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    ToastModule
+    NgToastModule
+
   ],
   providers: [
     {
@@ -30,7 +30,6 @@ import { MessageService } from 'primeng/api';
       useClass: AuthInterceptorInterceptor,
       multi: true,
     },
-    MessageService,
   ],
   bootstrap: [AppComponent],
   schemas: [

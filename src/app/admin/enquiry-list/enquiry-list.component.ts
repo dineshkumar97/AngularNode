@@ -46,6 +46,7 @@ export class EnquiryListComponent implements OnInit {
     this.enquiryForm = this.fb.group({
       username: ['', Validators.required],
       mobileno: ['', Validators.required],
+      description: ['', Validators.required],
       age: ['', Validators.required],
       address: ['', Validators.required],
       emailId: ['', [Validators.required, Validators.email]],
@@ -67,6 +68,7 @@ export class EnquiryListComponent implements OnInit {
         age: data.age,
         address: data.address,
         emailId: data.emailId,
+        description:data.description
       });
     }
   }
@@ -96,9 +98,10 @@ export class EnquiryListComponent implements OnInit {
           next: (posts) => {
             this.getAllEnquiryDetails();
             this.closePopup();
+            this.toaster.showSuccess(posts.message);
           },
           error: (error) => {
-            // this.errorMessage = error;
+            this.toaster.showError(error.message);
           },
         });
       } else {
@@ -115,7 +118,7 @@ export class EnquiryListComponent implements OnInit {
                this.toaster.showSuccess(posts.message);
           },
           error: (error) => {
-            // this.errorMessage = error;
+            this.toaster.showError(error.message);
           },
         });
       }

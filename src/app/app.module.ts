@@ -9,10 +9,12 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AuthInterceptorInterceptor } from './auth-interceptor.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgToastModule } from 'ng-angular-popup';
+import { SignupComponent } from './layout/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

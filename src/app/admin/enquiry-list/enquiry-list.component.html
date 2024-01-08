@@ -94,6 +94,14 @@
                         <div *ngIf="formVale.address.errors.required">Address is required</div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label>description</label>
+                    <input type="text" formControlName="description" [maxlength]="100" class="form-control"
+                        [ngClass]="{ 'is-invalid': formVale.description.touched && formVale.description.errors }" />
+                    <div *ngIf="formVale.description.touched && formVale.description.errors" class="invalid-feedback">
+                        <div *ngIf="formVale.description.errors.required">description is required</div>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="modal-footer">

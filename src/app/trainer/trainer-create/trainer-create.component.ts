@@ -72,7 +72,7 @@ export class TrainerCreateComponent implements OnInit {
             this.router.navigate(['/trainer/trainer-list'])
           },
           error: (error:any) => {
-            this.toaster.showError(error);
+            this.toaster.showError(error.error.message);
           },
         });
       }else{
@@ -91,7 +91,7 @@ export class TrainerCreateComponent implements OnInit {
             this.router.navigate(['/trainer/trainer-list'])
           },
           error: (error:any) => {
-            this.toaster.showError(error);
+            this.toaster.showError(error.error.message);
           },
         });
       }

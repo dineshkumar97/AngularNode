@@ -28,7 +28,7 @@ export class SideMenuComponent implements OnInit {
 
   routingEvent(event: any) {
     if (event == 'member') {
-      this.router.navigate(['/users/member-list'])
+      this.router.navigate(['/member/member-list'])
     } else if (event == 'Enquiry') {
       this.router.navigate(['/users/enquiry-list'])
     } else if (event == 'Pricing') {

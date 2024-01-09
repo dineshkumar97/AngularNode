@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from '../admin.service';
+import { AdminService } from '../../admin/admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/toster/toaster.service';
@@ -49,10 +49,10 @@ export class MemberCreateComponent implements OnInit {
 
   get formVale() { return this.memeberForm.controls; }
 
+ 
   public cancelCreate(): void {
-    this.router.navigate(['/users/member-list'])
+    this.router.navigate(['/member/member-list'])
   }
-
   public numberOnly(event: any): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -71,7 +71,7 @@ export class MemberCreateComponent implements OnInit {
         this.adminService.createMember(this.memeberForm.value).subscribe({
           next: (posts) => {
             console.log('sss', posts)
-            this.router.navigate(['/users/member-list'])
+            this.router.navigate(['/member/member-list'])
           },
           error: (error) => {
           },
@@ -90,7 +90,7 @@ export class MemberCreateComponent implements OnInit {
         this.adminService.memberUpdate(this.memberPaticularDetail._id, final).subscribe({
           next: (posts) => {
             this.toaster.showSuccess(posts.message);
-            this.router.navigate(['/users/member-list'])
+            this.router.navigate(['/member/member-list'])
           },
           error: (error) => {
             this.toaster.showError(error);

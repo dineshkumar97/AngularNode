@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { SideMenuComponent } from './side-menu/side-menu.component';
 import { EnquiryListComponent } from './enquiry-list/enquiry-list.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
@@ -14,7 +13,7 @@ import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
-    SideMenuComponent,
+
     EnquiryListComponent,
     MemberListComponent,
     MemberCreateComponent,
@@ -24,7 +23,8 @@ import { NgToastModule } from 'ng-angular-popup';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FormsModule,ReactiveFormsModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgToastModule
   ],
   providers:[NgbActiveModal]

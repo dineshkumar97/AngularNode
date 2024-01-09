@@ -1,0 +1,56 @@
+<div class="table-data">
+    <div class="order">
+        <div class="head">
+            <h3>Trainer List </h3>
+            <button class="create-btn"  (click)="createTrainer()">Add Trainer</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Staff Name</th>
+                    <th>Staff ID</th>
+                    <th>Mobile No.</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Created Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let trainer of trainerList;index as i">
+                    <td>{{i+1}}</td>
+                    <td>
+                        <img src="assets/img/profile.png" alt="" />
+                        <p class="user-name">{{trainer.fullName}} </p>
+                    </td>
+                    <td>{{trainer.trainerUID}}</td>
+                    <td>{{trainer.mobileNo}}</td>
+                    <td>{{trainer.gender}}</td>
+                    <td>{{trainer.emailId}}</td>
+                    <td>{{trainer.address}}</td>
+                    <td>{{trainer.createdDate | date: 'dd-MMM-yyyy'}}</td>
+                    <td><i class="fas fa-edit curor-pointer" (click)="editTrainer(trainer)" ></i>
+                        <i class="fa-solid fa-trash m-l-10 curor-pointer" (click)="confirmationDelete(trainer)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!trainerList?.length" class="text-center">
+            <span> No data found...</span>
+        </div>
+    </div>
+    <ng-template #confirmation let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+            Are you sure to delete this trainer?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="closePopup()">No</button>
+            <button type="button" class="btn btn-outline-primary" (click)="deleteTrainer()">Yes</button>
+        </div>
+    </ng-template>
+</div>

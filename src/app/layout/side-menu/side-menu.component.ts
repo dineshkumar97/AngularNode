@@ -35,7 +35,9 @@ export class SideMenuComponent implements OnInit {
       this.router.navigate(['/users/pricing'])
     }else if (event == 'About') {
       this.router.navigate(['/users/about'])
-    }   else {
+    } else if (event == 'Trainer') {
+      this.router.navigate(['/trainer/trainer-list'])
+    }  else {
       this.router.navigate(['/login'])
       localStorage.clear();
     }

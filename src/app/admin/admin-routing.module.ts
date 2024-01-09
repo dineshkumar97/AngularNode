@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SideMenuComponent } from './side-menu/side-menu.component';
+import { SideMenuComponent } from '../layout/side-menu/side-menu.component';
 import { AuthGuard } from '../authservice/auth.guard';
 import { EnquiryListComponent } from './enquiry-list/enquiry-list.component';
 import { MemberListComponent } from './member-list/member-list.component';

@@ -33,7 +33,7 @@ export class EnquiryListComponent implements OnInit {
 
   public getAllEnquiryDetails(): void {
     this.adminService.getAllEnquiryDetails().subscribe({
-      next: (response) => {
+      next: (response:any) => {
         this.enquiryList = response.message;
       },
       error: (error) => {

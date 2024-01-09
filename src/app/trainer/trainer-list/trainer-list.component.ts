@@ -30,7 +30,6 @@ export class TrainerListComponent implements OnInit {
       next: (response: any) => {
         this.trainerList = response.message;
         this.trainerList.forEach((element: any, index: any) => {
-          this.trainerList[index].fullName = `${element.firstName} ${element.lastName}`
           this.trainerList[index].gender = element.gender == 1 ? 'Male' : element.gender == 2 ? 'Female' : 'Others';
         });
       },

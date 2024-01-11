@@ -345,6 +345,7 @@ ul.side-menu {
     height: 36px;
     object-fit: cover;
     border-radius: 50%;
+    cursor: pointer;
  }
 
  .content main{ 
@@ -617,3 +618,56 @@ $border: #ebebeb;
 $border-1: #e1e1e1;
 $fm-unna: 'Unna', serif;
 $fm-nunito: 'Nunito Sans', sans-serif;
+
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    width: 300px;
+
+    .sub-menu {
+        background: #fff;
+        padding: 20px;
+        // margin: 10px;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+    }
+    .user-info h3 {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .user-info img {
+        width: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+
+     }
+     .sub-menu hr {
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background: #ccc;
+        margin: 15px 0 10px;
+    }
+    .sub-menu .text{
+        padding-left: 10px;
+    }
+    .sub-menu a{
+       margin-bottom: 5px;
+       cursor: pointer;
+    }
+    .logout{
+        color: var(--red) !important;
+    }
+}
+.open-menu{
+    display: block !important;
+}
+#subMenu{
+    display: none;
+}

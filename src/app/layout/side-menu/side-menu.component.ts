@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 declare var sideMenuchangeList: any;
 declare var topBarToggle: any;
 declare var switchToggle: any;
+declare var profileToggle: any;
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
@@ -25,6 +26,10 @@ export class SideMenuComponent implements OnInit {
   switchBtn() {
     switchToggle();
   }
+  profileChange() {
+    profileToggle();
+  }
+
 
   routingEvent(event: any) {
     if (event == 'member') {

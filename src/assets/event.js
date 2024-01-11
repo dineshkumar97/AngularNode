@@ -37,6 +37,12 @@ function topBarToggle() {
         // container.classList.toggle('container-form');
     })
 }
+function profileToggle() {
+    let swithMode=document.getElementById('subMenu');
+    swithMode.classList.toggle('open-menu')
+    console.log('test')
+}
+
 
 
 window.addEventListener('resize', () => {

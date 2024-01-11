@@ -1,0 +1,108 @@
+<div class="table-data form-container">
+    <div class="order">
+        <div class="head">
+            <h3>Equipment</h3>
+        </div>
+
+        <form [formGroup]="equipmentForm">
+            <div class="form first">
+                <div class="details personal">
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Equipment Name</label>
+                            <input type="text" formControlName="equipmentName" [maxlength]="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.equipmentName.touched && formVale.equipmentName.errors }" />
+                            <div *ngIf="formVale.equipmentName.touched && formVale.equipmentName.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.equipmentName.errors.required">Equipment Name is required</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Date of Purchase</label>
+                            <input type="date" formControlName="dateOfPurchase" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.dateOfPurchase.touched && formVale.dateOfPurchase.errors }" />
+                            <div *ngIf="formVale.dateOfPurchase.touched && formVale.dateOfPurchase.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.dateOfPurchase.errors.required">Date of Purchase is required</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Quantity</label>
+                            <input type="text" formControlName="quantity" class="form-control"
+                            (keypress)="numberOnly($event)"  [maxlength]="5"
+                                [ngClass]="{ 'is-invalid': formVale.quantity.touched && formVale.quantity.errors }" />
+                            <div *ngIf="formVale.quantity.touched && formVale.quantity.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.quantity.errors.required">Quantity is required</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Price</label>
+                            <input type="text" formControlName="price" class="form-control"
+                            (keypress)="numberOnly($event)"  [maxlength]="5"
+                                [ngClass]="{ 'is-invalid': formVale.price.touched && formVale.price.errors }" />
+                            <div *ngIf="formVale.price.touched && formVale.price.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.price.errors.required">Price is required</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>description</label>
+                            <input type="text" formControlName="description" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.description.touched && formVale.description.errors }" />
+                            <div *ngIf="formVale.description.touched && formVale.description.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.description.errors.required">description is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="head">
+                        <h3>
+                            Vendor Details
+                        </h3>
+                    </div>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Organisation</label>
+                            <input type="text" formControlName="vendorOrganization" [maxlength]="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.vendorOrganization.touched && formVale.vendorOrganization.errors }" />
+                            <div *ngIf="formVale.vendorOrganization.touched && formVale.vendorOrganization.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.vendorOrganization.errors.required">Organisation is required</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Contact</label>
+                            <input type="text" formControlName="vendorContact" (keypress)="numberOnly($event)" [maxlength]="10" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.vendorContact.touched && formVale.vendorContact.errors }" />
+                            <div *ngIf="formVale.vendorContact.touched && formVale.vendorContact.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.vendorContact.errors.required">Contact is required</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" formControlName="vendorEmail" [maxlength]="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.vendorEmail.touched && formVale.vendorEmail.errors }" />
+                            <div *ngIf="formVale.vendorEmail.touched && formVale.vendorEmail.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.vendorEmail.errors.required">Email is required</div>
+                                <div *ngIf="formVale.vendorEmail.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Address</label>
+                            <input type="text" formControlName="vendorAddress" [maxlength]="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.vendorAddress.touched && formVale.vendorAddress.errors }" />
+                            <div *ngIf="formVale.vendorAddress.touched && formVale.vendorAddress.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.vendorAddress.errors.required">Address is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display-center">
+                        <button class="nextBtn" type="button" (click)="cancelCreate()">
+                            <span class="btnText">Cancel</span>
+                        </button>
+                        <button class="nextBtn m-l-10" type="button" (click)="createEquipment()">
+                            <span class="btnText">Save</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

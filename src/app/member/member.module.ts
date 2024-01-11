@@ -5,8 +5,13 @@ import { MemberRoutingModule } from './member-routing.module';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { NgToastModule } from 'ng-angular-popup';
+import { MemberListComponent } from './member-list/member-list.component';
+import { MemberCreateComponent } from './member-create/member-create.component';
 @NgModule({
-  declarations: [],
+  declarations: [
+    MemberListComponent,
+    MemberCreateComponent
+  ],
   imports: [
     CommonModule,
     MemberRoutingModule,

@@ -66,12 +66,7 @@ export class TrainerCreateComponent implements OnInit {
       return;
     } else {
       if(!this.isUpdateMember){
-        let json={
-          quantity:2,
-          price:10
-        }
-        let ss=Object.assign({},json,this.trainerForm.value)
-        this.trainerService.createTrainerDetails(ss).subscribe({
+        this.trainerService.createTrainerDetails(this.trainerForm.value).subscribe({
           next: (posts:any) => {
             this.toaster.showSuccess(posts.message);
             this.router.navigate(['/trainer/trainer-list'])

@@ -28,6 +28,3 @@ export class TrainerService {
     return this.http.delete<any>(`${environment.apiBaseUrl}/trainer/delete/${deleteUID}`);
   }
 }
-// router.post('/trainer/create', trainerContoller.createTrainer);
-// router.get('/trainer/getAllDetails', trainerContoller.getAllTrainer);
-// router.put('/trainer/update/:idUser', trainerContoller.updateTrainer);

@@ -4,6 +4,7 @@ import { LoginComponent } from './layout/login/login.component';
 const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
 const trainerModule = () => import('./trainer/trainer.module').then(x => x.TrainerModule);
 const memberModule = () => import('./member/member.module').then(x => x.MemberModule);
+const equipmentModule = () => import('./equipment/equipment.module').then(x => x.EquipmentModule);
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: "full" },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'users', loadChildren: adminModule},
   { path: 'trainer', loadChildren: trainerModule},
   { path: 'member', loadChildren: memberModule},
+  { path: 'equipment', loadChildren: equipmentModule},
 ];
 
 @NgModule({

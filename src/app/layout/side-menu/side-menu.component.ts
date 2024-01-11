@@ -40,6 +40,8 @@ export class SideMenuComponent implements OnInit {
       this.router.navigate(['/users/pricing'])
     }else if (event == 'About') {
       this.router.navigate(['/users/about'])
+    }else if (event == 'Equipment') {
+      this.router.navigate(['/equipment/equipment-list'])
     } else if (event == 'Trainer') {
       this.router.navigate(['/trainer/trainer-list'])
     }  else {

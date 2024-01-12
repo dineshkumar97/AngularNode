@@ -59,6 +59,7 @@
                     <label>Mobile No.</label>
                     <input type="text" formControlName="mobileno" (keypress)="numberOnly($event)" [maxlength]="10"
                         class="form-control" 
+                        oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
                         [ngClass]="{ 'is-invalid': formVale.mobileno.touched && formVale.mobileno.errors }" />
                     <div *ngIf="formVale.mobileno.touched && formVale.mobileno.errors" class="invalid-feedback">
                         <div *ngIf="formVale.mobileno.errors.required">Mobile Number is required.</div>
@@ -79,6 +80,7 @@
                     <label>Age</label>
                     <input type="text" formControlName="age" class="form-control" [maxlength]="2"
                         (keypress)="numberOnly($event)"
+                        oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
                         [ngClass]="{ 'is-invalid': formVale.age.touched && formVale.age.errors }" />
                     <div *ngIf="formVale.age.touched && formVale.age.errors" class="invalid-feedback">
                         <div *ngIf="formVale.age.errors.required">Age is required</div>

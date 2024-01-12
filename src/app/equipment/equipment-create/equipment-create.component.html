@@ -28,6 +28,7 @@
                             <label>Quantity</label>
                             <input type="text" formControlName="quantity" class="form-control"
                             (keypress)="numberOnly($event)"  [maxlength]="5"
+                            oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
                                 [ngClass]="{ 'is-invalid': formVale.quantity.touched && formVale.quantity.errors }" />
                             <div *ngIf="formVale.quantity.touched && formVale.quantity.errors" class="invalid-feedback">
                                 <div *ngIf="formVale.quantity.errors.required">Quantity is required</div>
@@ -37,6 +38,7 @@
                             <label>Price</label>
                             <input type="text" formControlName="price" class="form-control"
                             (keypress)="numberOnly($event)"  [maxlength]="5"
+                            oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
                                 [ngClass]="{ 'is-invalid': formVale.price.touched && formVale.price.errors }" />
                             <div *ngIf="formVale.price.touched && formVale.price.errors" class="invalid-feedback">
                                 <div *ngIf="formVale.price.errors.required">Price is required</div>

@@ -27,7 +27,8 @@
                         <div class="input-field">
                             <label>Mobile No.</label>
                             <input type="text" formControlName="mobileNo" (keypress)="numberOnly($event)"
-                                [maxlength]="10" class="form-control"
+                                [maxlength]="10" class="form-control" 
+                                oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
                                 [ngClass]="{ 'is-invalid': formVale.mobileNo.touched && formVale.mobileNo.errors }" />
                             <div *ngIf="formVale.mobileNo.touched && formVale.mobileNo.errors" class="invalid-feedback">
                                 <div *ngIf="formVale.mobileNo.errors.required">Mobile Number is required.</div>

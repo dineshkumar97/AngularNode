@@ -42,6 +42,7 @@ export class EnquiryListComponent implements OnInit {
     });
   }
 
+  
   public loadCreateForm(): void {
     this.enquiryForm = this.fb.group({
       username: ['', Validators.required],

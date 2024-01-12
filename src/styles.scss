@@ -511,15 +511,15 @@ ul.side-menu {
 .form-container form .fields{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .form-container form .fields .input-field{
     display: flex;
-    width: calc(100% / 3 - 15px);
+    width: calc(32.333333% - 10px);
     flex-direction: column;
-    margin: 4px 0;
+    margin: 4px 10px;
 }
 .input-field label{
     font-size: 12px;

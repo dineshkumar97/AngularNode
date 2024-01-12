@@ -39,7 +39,7 @@ export class TrainerCreateComponent implements OnInit {
     this.trainerForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      mobileNo: ['', Validators.required],
+      mobileNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       gender: ['', Validators.required],
       address: ['', Validators.required],
       emailId: ['', [Validators.required, Validators.email]],

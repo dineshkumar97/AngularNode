@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/toster/toaster.service';
 import { EquipmentService } from '../equipment.service';
+import { formatDate } from "@angular/common";
 @Component({
   selector: 'app-equipment-create',
   templateUrl: './equipment-create.component.html',
@@ -23,7 +24,8 @@ export class EquipmentCreateComponent implements OnInit {
   public isUpdateEquipment = false;
   public equipmentForm!: FormGroup;
   public equipmentPaticularDetail:any;
-
+  dateFormat = "yyyy-MM-dd";
+  language = "en";
 
   ngOnInit(): void {
     this.initilization();
@@ -42,7 +44,7 @@ export class EquipmentCreateComponent implements OnInit {
       description: ['', Validators.required],
       dateOfPurchase: ['', Validators.required],
       vendorOrganization: ['', Validators.required],
-      vendorContact: ['', Validators.required],
+      vendorContact:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       vendorAddress: ['', Validators.required],
       vendorEmail:  ['', [Validators.required, Validators.email]],
     });
@@ -102,9 +104,10 @@ export class EquipmentCreateComponent implements OnInit {
     this.equipmentService.getParticularEquipment(id).subscribe({
       next: (posts:any) => {
         this.equipmentPaticularDetail = posts.message;
+        const newDate = new Date(posts.message.dateOfPurchase);
         this.equipmentForm.patchValue({
           equipmentName: posts.message.equipmentName,
-          dateOfPurchase: posts.message.dateOfPurchase,
+          dateOfPurchase: this.formatFormDate(newDate),
           description: posts.message.description,
           price: posts.message.price,
           quantity: posts.message.quantity,
@@ -118,6 +121,10 @@ export class EquipmentCreateComponent implements OnInit {
         // this.errorMessage = error;
       },
     });
+  }
+
+  formatFormDate(date: Date) {
+    return formatDate(date, this.dateFormat, this.language);
   }
 
 }

@@ -71,7 +71,8 @@
                             <input type="text" formControlName="vendorContact" (keypress)="numberOnly($event)" [maxlength]="10" class="form-control"
                                 [ngClass]="{ 'is-invalid': formVale.vendorContact.touched && formVale.vendorContact.errors }" />
                             <div *ngIf="formVale.vendorContact.touched && formVale.vendorContact.errors" class="invalid-feedback">
-                                <div *ngIf="formVale.vendorContact.errors.required">Contact is required</div>
+                                <div *ngIf="formVale.vendorContact.errors.required">Mobile Number is required.</div>
+                                <div *ngIf="formVale.vendorContact.errors.pattern">Please, Enter 10 digit Mobile Number.</div>
                             </div>
                         </div>
                         <div class="input-field">

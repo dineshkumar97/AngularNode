@@ -45,7 +45,7 @@ export class EnquiryListComponent implements OnInit {
   public loadCreateForm(): void {
     this.enquiryForm = this.fb.group({
       username: ['', Validators.required],
-      mobileno: ['', Validators.required],
+      mobileno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       description: ['', Validators.required],
       age: ['', Validators.required],
       address: ['', Validators.required],

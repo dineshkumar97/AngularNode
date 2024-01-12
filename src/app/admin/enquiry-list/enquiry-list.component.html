@@ -61,7 +61,8 @@
                         class="form-control" 
                         [ngClass]="{ 'is-invalid': formVale.mobileno.touched && formVale.mobileno.errors }" />
                     <div *ngIf="formVale.mobileno.touched && formVale.mobileno.errors" class="invalid-feedback">
-                        <div *ngIf="formVale.mobileno.errors.required">Mobile No. is required</div>
+                        <div *ngIf="formVale.mobileno.errors.required">Mobile Number is required.</div>
+                        <div *ngIf="formVale.mobileno.errors.pattern">Please, Enter 10 digit Mobile Number.</div>
                     </div>
                 </div>
 

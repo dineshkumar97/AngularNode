@@ -39,7 +39,7 @@ export class MemberCreateComponent implements OnInit {
   public loadMemberForm(): void {
     this.memeberForm = this.fb.group({
       username: ['', Validators.required],
-      mobileno: ['', Validators.required],
+      mobileno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       gender: ['', Validators.required],
       age: ['', Validators.required],
       address: ['', Validators.required],

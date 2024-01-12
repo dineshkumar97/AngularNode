@@ -664,6 +664,12 @@ $fm-nunito: 'Nunito Sans', sans-serif;
     .logout{
         color: var(--red) !important;
     }
+    .sub-menu .logout:hover{
+        color: var(--blue) !important;
+    }
+    .sub-menu .hover:hover{
+        color: var(--blue) !important;
+    }  
 }
 .open-menu{
     display: block !important;

@@ -17,12 +17,12 @@ function sideMenuchangeList() {
 
 
 
-function switchToggle(){
-    let swithMode=document.getElementById('switch-mode');
-    swithMode.addEventListener('change',(e)=>{
-        if(e.target.checked){
+function switchToggle() {
+    let swithMode = document.getElementById('switch-mode');
+    swithMode.addEventListener('change', (e) => {
+        if (e.target.checked) {
             document.body.classList.add('dark');
-        }else{
+        } else {
             document.body.classList.remove('dark');
         }
     })
@@ -38,11 +38,10 @@ function topBarToggle() {
     })
 }
 function profileToggle() {
-    let swithMode=document.getElementById('subMenu');
+    let swithMode = document.getElementById('subMenu');
     swithMode.classList.toggle('open-menu')
     console.log('test')
 }
-
 
 
 window.addEventListener('resize', () => {

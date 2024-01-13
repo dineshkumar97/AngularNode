@@ -1,0 +1,64 @@
+<div class="table-data form-container">
+    <div class="order">
+        <div class="head">
+            <h3>Plan</h3>
+        </div>
+
+        <form [formGroup]="planForm">
+            <div class="form first">
+                <div class="details personal">
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Name</label>
+                            <input type="text" formControlName="name" [maxlength]="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.name.touched && formVale.name.errors }" />
+                            <div *ngIf="formVale.name.touched && formVale.name.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.name.errors.required">Name is required</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>No of Days</label>
+                            <input type="text" formControlName="noOfDays" [maxlength]="3" class="form-control"
+                            oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
+                            (keypress)="numberOnly($event)"
+                                [ngClass]="{ 'is-invalid': formVale.noOfDays.touched && formVale.noOfDays.errors }" />
+                            <div *ngIf="formVale.noOfDays.touched && formVale.noOfDays.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.noOfDays.errors.required">No of Days is required</div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Price</label>
+                            <input type="text" formControlName="price" (keypress)="numberOnly($event)"
+                                [maxlength]="10" class="form-control" 
+                                oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
+                                [ngClass]="{ 'is-invalid': formVale.price.touched && formVale.price.errors }" />
+                            <div *ngIf="formVale.price.touched && formVale.price.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.price.errors.required">Mobile Number is required.</div>
+                                <div *ngIf="formVale.price.errors.pattern">Please, Enter 10 digit Mobile Number.</div>
+                            </div>
+                        </div>
+                       
+                      
+                        <div class="input-field">
+                            <label>Description</label>
+                            <input type="text" formControlName="description" [maxlength]="100" class="form-control"
+                                [ngClass]="{ 'is-invalid': formVale.description.touched && formVale.description.errors }" />
+                            <div *ngIf="formVale.description.touched && formVale.description.errors" class="invalid-feedback">
+                                <div *ngIf="formVale.description.errors.required">Description is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display-center">
+                        <button class="nextBtn" type="button" (click)="cancelCreate()">
+                            <span class="btnText">Cancel</span>
+                        </button>
+                        <button class="nextBtn m-l-10" type="button" (click)="createPlan()">
+                            <span class="btnText">Save</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

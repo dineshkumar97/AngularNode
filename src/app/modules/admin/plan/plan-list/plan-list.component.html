@@ -1,0 +1,50 @@
+<div class="table-data">
+    <div class="order">
+        <div class="head">
+            <h3>Plan List</h3>
+            <button class="create-btn" (click)="createPlan()">Add Plan</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>No of Days</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of memberList;index as i">
+                    <td>{{i+1}}</td>
+                    <td>
+                        <img src="assets/img/profile.png" alt="" />
+                        <p class="user-name">{{member.name}} </p>
+                    </td>
+                    <td>{{member.noOfDays}}</td>
+                    <td>{{member.price}}</td>
+                    <td>{{member.description}}</td>
+                    <td><i class="fas fa-edit curor-pointer" (click)="editMember(member)" ></i>
+                        <i class="fa-solid fa-trash m-l-10 curor-pointer" (click)="confirmationDelete(member)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!memberList?.length" class="text-center">
+          <span> No data found...</span>
+       </div>
+    </div>
+    <ng-template #confirmation let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+            Are you sure to delete this plan?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="closePopup()">No</button>
+            <button type="button" class="btn btn-outline-primary" (click)="deleteEnqiury()">Yes</button>
+        </div>
+    </ng-template>
+</div>

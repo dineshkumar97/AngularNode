@@ -4,7 +4,7 @@ import { TrainerListComponent } from './trainer-list/trainer-list.component';
 import { TrainerCreateComponent } from './trainer-create/trainer-create.component';
 
 const routes: Routes = [
-  { path: 'list', component: TrainerListComponent },
+  { path: '', component: TrainerListComponent },
   { path: 'create', component: TrainerCreateComponent },
   { path: 'update/:id', component: TrainerCreateComponent },
 ];

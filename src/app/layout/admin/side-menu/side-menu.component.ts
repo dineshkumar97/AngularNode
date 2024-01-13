@@ -34,8 +34,9 @@ export class SideMenuComponent implements OnInit {
   routingEvent(event: any) {
     if (event == 'member') {
       this.router.navigate(['/member/member-list'])
+      console.log('me')
     } else if (event == 'Enquiry') {
-      this.router.navigate(['/users/enquiry-list'])
+      this.router.navigate(['/enquiry/enquiry-list'])
     } else if (event == 'Pricing') {
       this.router.navigate(['/users/pricing'])
     } else if (event == 'About') {
@@ -43,7 +44,7 @@ export class SideMenuComponent implements OnInit {
     } else if (event == 'Equipment') {
       this.router.navigate(['/equipment/equipment-list'])
     } else if (event == 'Trainer') {
-      this.router.navigate(['/trainer/trainer-list'])
+      this.router.navigate(['/trainer/list'])
     } else {
       this.router.navigate(['/login'])
       localStorage.clear();

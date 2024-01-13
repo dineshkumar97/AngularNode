@@ -5,7 +5,7 @@ import { EnquiryRoutingModule } from './enquiry-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgToastModule } from 'ng-angular-popup';
 import { EnquiryListComponent } from './enquiry-list/enquiry-list.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -19,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     NgToastModule,
     NgbModule,
-  ]
+  ],
+  providers:[NgbActiveModal]
 })
 export class EnquiryModule { }

@@ -49,7 +49,7 @@ export class TrainerCreateComponent implements OnInit {
   get formVale() { return this.trainerForm.controls; }
 
   public cancelCreate(): void {
-    this.router.navigate(['/trainer/trainer-list'])
+    this.router.navigate(['admin/trainer']);
   }
 
   public numberOnly(event: any): boolean {
@@ -69,7 +69,7 @@ export class TrainerCreateComponent implements OnInit {
         this.trainerService.createTrainerDetails(this.trainerForm.value).subscribe({
           next: (posts:any) => {
             this.toaster.showSuccess(posts.message);
-            this.router.navigate(['/trainer/trainer-list'])
+            this.router.navigate(['admin/trainer']);
           },
           error: (error:any) => {
             this.toaster.showError(error.error.message);
@@ -88,7 +88,7 @@ export class TrainerCreateComponent implements OnInit {
         this.trainerService.updateTrainerDetails(this.memberPaticularDetail._id, final).subscribe({
           next: (posts:any) => {
             this.toaster.showSuccess(posts.message);
-            this.router.navigate(['/trainer/trainer-list'])
+            this.router.navigate(['admin/trainer']);
           },
           error: (error:any) => {
             this.toaster.showError(error.error.message);

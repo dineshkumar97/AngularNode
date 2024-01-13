@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TrainerService } from '../trainer.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ToasterService } from 'src/app/services/toaster.service';
 @Component({
@@ -14,10 +14,12 @@ export class TrainerListComponent implements OnInit {
   public deleteInformation: any;
   constructor(private trainerService: TrainerService, private router: Router, private modalService: NgbModal,
     private toaster: ToasterService,
+    private route: ActivatedRoute,
     public activeModal: NgbActiveModal) { }
   public trainerList: any;
 
   ngOnInit(): void {
+    console.log('trainer')
     this.initilization();
   }
 
@@ -40,13 +42,12 @@ export class TrainerListComponent implements OnInit {
     });
   }
   public createTrainer(): void {
-    this.router.navigate(['/trainer/trainer-create']);
+    this.router.navigate(['create'], { relativeTo: this.route });
 
   }
 
   public editTrainer(trainer: any): void {
-    this.router.navigate(['/trainer/trainer-update', trainer._id]);
-
+    this.router.navigate(['update', trainer._id], { relativeTo: this.route });
   }
 
 

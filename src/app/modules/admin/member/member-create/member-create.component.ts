@@ -51,7 +51,7 @@ export class MemberCreateComponent implements OnInit {
 
  
   public cancelCreate(): void {
-    this.router.navigate(['/member/member-list'])
+    this.router.navigate(['admin/member']);
   }
   public numberOnly(event: any): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
@@ -71,7 +71,7 @@ export class MemberCreateComponent implements OnInit {
         this.adminService.createMember(this.memeberForm.value).subscribe({
           next: (posts) => {
             console.log('sss', posts)
-            this.router.navigate(['/member/member-list'])
+             this.router.navigate(['admin/member']);
           },
           error: (error) => {
           },
@@ -90,7 +90,7 @@ export class MemberCreateComponent implements OnInit {
         this.adminService.memberUpdate(this.memberPaticularDetail._id, final).subscribe({
           next: (posts) => {
             this.toaster.showSuccess(posts.message);
-            this.router.navigate(['/member/member-list'])
+             this.router.navigate(['admin/member']);
           },
           error: (error) => {
             this.toaster.showError(error);

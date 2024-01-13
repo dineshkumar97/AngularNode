@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { AdminService } from 'src/app/services/admin.service';
 import { ToasterService } from 'src/app/services/toaster.service';
@@ -14,6 +14,7 @@ export class MemberListComponent implements OnInit {
 
   constructor(private adminService: AdminService, private router: Router, private modalService: NgbModal,
     private toaster:ToasterService,
+    private route: ActivatedRoute,
     public activeModal: NgbActiveModal) { }
   public memberList: any;
   public deleteInformation: any
@@ -42,13 +43,12 @@ export class MemberListComponent implements OnInit {
   }
 
   public createMember(): void {
-    this.router.navigate(['/member/member-create']);
+    this.router.navigate(['create'], { relativeTo: this.route });
 
   }
 
   public editMember(member: any): void {
-    this.router.navigate(['/member/member-update', member._id]);
-
+    this.router.navigate(['update', member._id], { relativeTo: this.route });
   }
  
 

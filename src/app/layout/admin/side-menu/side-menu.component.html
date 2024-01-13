@@ -30,7 +30,13 @@
             </a>
         </li> -->
         <li>
-            <a class="nav-link" [routerLink]="'Enquiry'">
+            <a class="nav-link" [routerLink]="'dashboard'">
+                <i class="fab fa-slack"></i>
+                <span class="text">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" [routerLink]="'enquiry'">
                 <i class="fab fa-slack"></i>
                 <span class="text">Enquiry</span>
             </a>
@@ -42,13 +48,13 @@
             </a>
         </li>
         <li>
-            <a class="nav-link" (click)="routingEvent('Equipment')">
+            <a class="nav-link"  [routerLink]="'equipment'">
                 <i class="fab fa-slack"></i>
                 <span class="text">Equipment</span>
             </a>
         </li>
         <li>
-            <a class="nav-link" (click)="routingEvent('Trainer')">
+            <a class="nav-link" [routerLink]="'trainer'">
                 <i class="fab fa-slack"></i>
                 <span class="text">Trainer</span>
             </a>

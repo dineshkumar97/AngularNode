@@ -74,7 +74,7 @@ export class EquipmentCreateComponent implements OnInit {
         this.equipmentService.createEquipmentDetails(this.equipmentForm.value).subscribe({
           next: (posts: any) => {
             this.toaster.showSuccess(posts.message);
-            this.router.navigate(['/equipment'])
+             this.router.navigate(['admin/equipment']);
           },
           error: (error: any) => {
             this.toaster.showError(error.error.message);
@@ -90,7 +90,7 @@ export class EquipmentCreateComponent implements OnInit {
         this.equipmentService.updateEquipmentDetails(this.equipmentPaticularDetail._id, final).subscribe({
           next: (posts: any) => {
             this.toaster.showSuccess(posts.message);
-            this.router.navigate(['/equipment'])
+             this.router.navigate(['admin/equipment']);
           },
           error: (error: any) => {
             this.toaster.showError(error.error.message);

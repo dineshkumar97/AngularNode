@@ -1,0 +1,62 @@
+.m-container {
+  width: 100%;
+  color: var(--dark);
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.m-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+// custom table
+.m-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.m-table th {
+  padding: 10px 0px 10px 10px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--grey);
+}
+
+.m-table td {
+  padding: 10px 0px 10px 10px;
+}
+
+.m-table td:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 6px;
+}
+
+.m-table td img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.m-table tr:hover {
+  background: var(--grey);
+}
+
+.m-table tr td .status {
+  font-size: 10px;
+  padding: 6px 16px;
+  color: var(--light);
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.m-table tr td .status.pending {
+  background: var(--orange);
+}

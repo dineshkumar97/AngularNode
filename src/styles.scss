@@ -76,6 +76,12 @@ body.dark{
     width: 60px;
 }
 
+.top-menu.top-menu-hide {
+    position: relative;
+    width: calc(100% - 60px);
+    left: 60px;
+    transition: 0.3s ease;
+}
 .sidebar::-webkit-scrollbar {
     display: none;
 }

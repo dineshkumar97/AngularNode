@@ -31,10 +31,10 @@ function switchToggle() {
 function topBarToggle() {
     let menuBar = document.querySelector('.menu-btn');
     let sideBar = document.querySelector('.sidebar');
-    let container = document.querySelector('.container');
+    let container = document.querySelector('.top-menu');
     menuBar.addEventListener('click', () => {
         sideBar.classList.toggle('hide');
-        // container.classList.toggle('container-form');
+        container.classList.toggle('top-menu-hide');
     })
 }
 function profileToggle() {

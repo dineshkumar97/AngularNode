@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToasterService } from 'src/app/toster/toaster.service';
+import { ToasterService } from 'src/app/services/toaster.service';
 
 @Component({
   selector: 'app-login',
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         const authToken = posts.token; 
         this.loginService.setAuthToken(authToken);
         sessionStorage.setItem('authToken',authToken);
-        this.router.navigate(['/users/enquiry-list']);
+        this.router.navigate(['/admin']);
         this.toaster.showSuccess(posts.message);
       },
       error: (error) => {

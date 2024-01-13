@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToasterService } from 'src/app/toster/toaster.service';
+import { ToasterService } from 'src/app/services/toaster.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',

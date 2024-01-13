@@ -9,13 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './layout/login/login.component';
 import { SignupComponent } from './layout/signup/signup.component';
-import { SideMenuComponent } from './layout/side-menu/side-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    SideMenuComponent,
   ],
   imports: [
     BrowserModule,

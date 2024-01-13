@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './layout/login/login.component';
-const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
-const trainerModule = () => import('./trainer/trainer.module').then(x => x.TrainerModule);
-const memberModule = () => import('./member/member.module').then(x => x.MemberModule);
-const equipmentModule = () => import('./equipment/equipment.module').then(x => x.EquipmentModule);
+import { AuthGuard } from './authservice/auth.guard';
+const adminModule = () => import('./layout/admin/admin.module').then(x => x.AdminModule);
+const websiteModule = () => import('./layout/website/website.module').then(x => x.WebsiteModule);
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: "full" },
+  { path: '', loadChildren: websiteModule },
   { path: 'login', component: LoginComponent },
-  { path: 'users', loadChildren: adminModule},
-  { path: 'trainer', loadChildren: trainerModule},
-  { path: 'member', loadChildren: memberModule},
-  { path: 'equipment', loadChildren: equipmentModule},
+  { path: 'admin', loadChildren: adminModule },
 ];
 
 @NgModule({

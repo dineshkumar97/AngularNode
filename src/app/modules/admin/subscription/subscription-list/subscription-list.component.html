@@ -8,10 +8,10 @@
             <thead>
                 <tr>
                     <th>S.No</th>
-                    <th>Name</th>
-                    <th>No of Days</th>
-                    <th>Price</th>
-                    <th>Description</th>
+                    <th>Subsciber Name</th>
+                    <th>Plan Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -20,11 +20,11 @@
                     <td>{{i+1}}</td>
                     <td>
                         <img src="assets/img/profile.png" alt="" />
-                        <p class="user-name">{{subscription.name}} </p>
+                        <p class="user-name">{{subscription.member.text}} </p>
                     </td>
-                    <td>{{subscription.noOfDays}}</td>
-                    <td>{{subscription.price}}</td>
-                    <td>{{subscription.description}}</td>
+                    <td>{{subscription.plan.text}}</td>
+                    <td>{{subscription.startDate | date: 'dd-MMM-yyyy'}}</td>
+                    <td>{{subscription.endDate | date: 'dd-MMM-yyyy'}}</td>
                     <td><i class="fas fa-edit curor-pointer" (click)="editSubscription(subscription)" ></i>
                         <i class="fa-solid fa-trash m-l-10 curor-pointer" (click)="confirmationDelete(subscription)"></i>
                     </td>

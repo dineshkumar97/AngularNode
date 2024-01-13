@@ -1,0 +1,36 @@
+<div class="table-data form-container">
+    <div class="order">
+        <div class="head">
+            <h3>Membership </h3>
+        </div>
+
+        <form [formGroup]="memeberForm">
+            <div class="row">
+                <div class="col-md-3">
+                    <label  for="autoSizingSelect">Member</label>
+                    <select class="form-select" id="autoSizingSelect"  formControlName="member" #mySelect
+                    (change)='onOptionsSelected(mySelect.value)'>
+                        <option class='option' *ngFor='let option of memberList' [value]="option._id">
+                            {{option.username}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="inputPassword4">Password</label>
+                    <select class='form-select'  id="inputPassword4" formControlName="member" #mySelect
+                        (change)='onOptionsSelected(mySelect.value)'>
+                        <option class='option' *ngFor='let option of memberList' [value]="option._id">
+                            {{option.username}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="display-center">
+                <button class="nextBtn" type="button" (click)="cancelCreate()">
+                    <span class="btnText">Cancel</span>
+                </button>
+                <button class="nextBtn m-l-10" type="button" (click)="createMember()">
+                    <span class="btnText">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

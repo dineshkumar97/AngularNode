@@ -1,61 +1,58 @@
-<div class="table-data form-container">
-    <div class="order">
-        <div class="head">
-            <h3>Subscription </h3>
-        </div>
-
-        <form [formGroup]="subcriptionForm">
-            <div class="row">
-                <div class="col-md-3">
-                    <label for="autoSizingSelect">Member</label>
-                    <select class="form-select" id="autoSizingSelect" formControlName="member" #mySelect
-                        (change)='onOptionsMember(mySelect.value)'
-                        [ngClass]="{ 'is-invalid': formVale.member.touched && formVale.member.errors }">
-                        <option class='option' *ngFor='let option of memberList' [value]="option._id">
-                            {{option.username}}</option>
-                    </select>
-                    <div *ngIf="formVale.member.touched && formVale.member.errors" class="invalid-feedback">
-                        <div *ngIf="formVale.member.errors.required">Member is required</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label for="planlist">Plan</label>
-                    <select class='form-select' id="planlist" formControlName="plan" #plan
-                        (change)='onOptionsPlan(plan.value)'
-                        [ngClass]="{ 'is-invalid': formVale.plan.touched && formVale.plan.errors }">
-                        <option class='option' *ngFor='let option of planList' [value]="option._id">
-                            {{option.name}}</option>
-                    </select>
-                    <div *ngIf="formVale.plan.touched && formVale.plan.errors" class="invalid-feedback">
-                        <div *ngIf="formVale.plan.errors.required">Plan is required</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label>Start Date</label>
-                    <input type="date" [min]="todayDate"  (change)="dateStartDate($event)" formControlName="startDate" class="form-control"
-                        [ngClass]="{ 'is-invalid': formVale.startDate.touched && formVale.startDate.errors }" />
-                    <div *ngIf="formVale.startDate.touched && formVale.startDate.errors" class="invalid-feedback">
-                        <div *ngIf="formVale.startDate.errors.required">Start Date is required</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label>End Date</label>
-                    <input type="date" formControlName="endDate" class="form-control"
-                    [min]="endDate" 
-                        [ngClass]="{ 'is-invalid': formVale.endDate.touched && formVale.endDate.errors }" />
-                    <div *ngIf="formVale.endDate.touched && formVale.endDate.errors" class="invalid-feedback">
-                        <div *ngIf="formVale.endDate.errors.required">End Date is required</div>
-                    </div>
-                </div>
-            </div>
-            <div class="display-center">
-                <button class="btn btn-outline-secondary" type="button" (click)="cancelCreate()">
-                    <span class="btnText">Cancel</span>
-                </button>
-                <button class="btn btn-outline-primary m-l-10" type="button" (click)="createMember()">
-                    <span class="btnText">Save</span>
-                </button>
-            </div>
-        </form>
+<div class="m-container">
+    <div class="m-header">
+        <h3>Subscription </h3>
     </div>
+    <form [formGroup]="subcriptionForm">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="autoSizingSelect">Member</label>
+                <select class="form-select" id="autoSizingSelect" formControlName="member" #mySelect
+                    (change)='onOptionsMember(mySelect.value)'
+                    [ngClass]="{ 'is-invalid': formVale.member.touched && formVale.member.errors }">
+                    <option class='option' *ngFor='let option of memberList' [value]="option._id">
+                        {{option.username}}</option>
+                </select>
+                <div *ngIf="formVale.member.touched && formVale.member.errors" class="invalid-feedback">
+                    <div *ngIf="formVale.member.errors.required">Member is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="planlist">Plan</label>
+                <select class='form-select' id="planlist" formControlName="plan" #plan
+                    (change)='onOptionsPlan(plan.value)'
+                    [ngClass]="{ 'is-invalid': formVale.plan.touched && formVale.plan.errors }">
+                    <option class='option' *ngFor='let option of planList' [value]="option._id">
+                        {{option.name}}</option>
+                </select>
+                <div *ngIf="formVale.plan.touched && formVale.plan.errors" class="invalid-feedback">
+                    <div *ngIf="formVale.plan.errors.required">Plan is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label>Start Date</label>
+                <input type="date" [min]="todayDate" (change)="dateStartDate($event)" formControlName="startDate"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': formVale.startDate.touched && formVale.startDate.errors }" />
+                <div *ngIf="formVale.startDate.touched && formVale.startDate.errors" class="invalid-feedback">
+                    <div *ngIf="formVale.startDate.errors.required">Start Date is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label>End Date</label>
+                <input type="date" formControlName="endDate" class="form-control" [min]="endDate"
+                    [ngClass]="{ 'is-invalid': formVale.endDate.touched && formVale.endDate.errors }" />
+                <div *ngIf="formVale.endDate.touched && formVale.endDate.errors" class="invalid-feedback">
+                    <div *ngIf="formVale.endDate.errors.required">End Date is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="btn btn-outline-secondary btn-sm" type="button" (click)="cancelCreate()">
+                Cancel
+            </button>
+            <button class="btn btn-outline-primary btn-sm ml-2" type="button" (click)="createMember()">
+                Save
+            </button>
+        </div>
+    </form>
 </div>

@@ -1,7 +1,7 @@
 <div class="m-container">
     <div class="m-header">
         <h3>Member List</h3>
-        <button class="create-btn" (click)="createMember()">Add Member</button>
+        <button class="btn btn-outline-primary btn-sm ml-1" (click)="createMember()">Add Member</button>
     </div>
     <div class="table-responsive">
         <table class="m-table">
@@ -33,8 +33,8 @@
                     <td>{{member.address}}</td>
                     <td>{{member.createdDate | date: 'dd-MMM-yyyy'}}</td>
                     <td>{{member.status}}</td>
-                    <td><i class="fas fa-edit curor-pointer" (click)="editMember(member)"></i>
-                        <i class="fa-solid fa-trash m-l-10 curor-pointer" (click)="confirmationDelete(member)"></i>
+                    <td><i class="fas fa-edit btn-outline-primary curor-pointer" (click)="editMember(member)"></i>
+                        <i class="fa-solid fa-trash btn-outline-danger m-l-10 curor-pointer" (click)="confirmationDelete(member)"></i>
                     </td>
                 </tr>
             </tbody>
@@ -53,7 +53,7 @@
         Are you sure to delete this member?
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="closePopup()">No</button>
-        <button type="button" class="btn btn-outline-primary" (click)="deleteEnqiury()">Yes</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="closePopup()">No</button>
+        <button type="button" class="btn btn-outline-danger btn-sm ml-2" (click)="deleteEnqiury()">Yes</button>
     </div>
 </ng-template>

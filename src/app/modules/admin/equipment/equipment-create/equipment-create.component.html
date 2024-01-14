@@ -19,6 +19,7 @@
                         <div class="input-field">
                             <label>Date of Purchase</label>
                             <input type="date" formControlName="dateOfPurchase" class="form-control"
+                            [min]="todayDate" 
                                 [ngClass]="{ 'is-invalid': formVale.dateOfPurchase.touched && formVale.dateOfPurchase.errors }" />
                             <div *ngIf="formVale.dateOfPurchase.touched && formVale.dateOfPurchase.errors" class="invalid-feedback">
                                 <div *ngIf="formVale.dateOfPurchase.errors.required">Date of Purchase is required</div>

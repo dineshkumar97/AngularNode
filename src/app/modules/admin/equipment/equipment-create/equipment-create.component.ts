@@ -4,20 +4,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/services/toaster.service';
 import { EquipmentService } from '../equipment.service';
 import { formatDate } from "@angular/common";
+import { DatePipe } from "@angular/common";
 @Component({
   selector: 'app-equipment-create',
   templateUrl: './equipment-create.component.html',
-  styleUrls: ['./equipment-create.component.scss']
+  styleUrls: ['./equipment-create.component.scss'],
+  providers:[DatePipe]
 })
 export class EquipmentCreateComponent implements OnInit {
-  isUpdateEquipment = false;
-  equipmentForm!: FormGroup;
-  equipmentPaticularDetail: any;
-  dateFormat = "yyyy-MM-dd";
-  language = "en";
-
+  public isUpdateEquipment = false;
+  public equipmentForm!: FormGroup;
+  public equipmentPaticularDetail: any;
+  public dateFormat = "yyyy-MM-dd";
+  public language = "en";
+  public todayDate: any;
   constructor(private equipmentService: EquipmentService, private router: Router,
-    private toaster: ToasterService,
+    private toaster: ToasterService, private datePipe:DatePipe,
     private fb: FormBuilder, private route: ActivatedRoute) {
     let id = this.route.snapshot.paramMap.get('id');
     if (id != null) {
@@ -34,6 +36,7 @@ export class EquipmentCreateComponent implements OnInit {
 
 
   public initilization(): void {
+    this.todayDate = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
     this.loadMemberForm();
   }
 
@@ -74,7 +77,7 @@ export class EquipmentCreateComponent implements OnInit {
         this.equipmentService.createEquipmentDetails(this.equipmentForm.value).subscribe({
           next: (posts: any) => {
             this.toaster.showSuccess(posts.message);
-             this.router.navigate(['admin/equipment']);
+            this.router.navigate(['admin/equipment']);
           },
           error: (error: any) => {
             this.toaster.showError(error.error.message);
@@ -90,7 +93,7 @@ export class EquipmentCreateComponent implements OnInit {
         this.equipmentService.updateEquipmentDetails(this.equipmentPaticularDetail._id, final).subscribe({
           next: (posts: any) => {
             this.toaster.showSuccess(posts.message);
-             this.router.navigate(['admin/equipment']);
+            this.router.navigate(['admin/equipment']);
           },
           error: (error: any) => {
             this.toaster.showError(error.error.message);

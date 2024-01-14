@@ -1,33 +1,58 @@
 <div class="table-data form-container">
     <div class="order">
         <div class="head">
-            <h3>Membership </h3>
+            <h3>Subscription </h3>
         </div>
 
-        <form [formGroup]="memeberForm">
+        <form [formGroup]="subcriptionForm">
             <div class="row">
                 <div class="col-md-3">
-                    <label  for="autoSizingSelect">Member</label>
-                    <select class="form-select" id="autoSizingSelect"  formControlName="member" #mySelect
-                    (change)='onOptionsSelected(mySelect.value)'>
+                    <label for="autoSizingSelect">Member</label>
+                    <select class="form-select" id="autoSizingSelect" formControlName="member" #mySelect
+                        (change)='onOptionsMember(mySelect.value)'
+                        [ngClass]="{ 'is-invalid': formVale.member.touched && formVale.member.errors }">
                         <option class='option' *ngFor='let option of memberList' [value]="option._id">
                             {{option.username}}</option>
                     </select>
+                    <div *ngIf="formVale.member.touched && formVale.member.errors" class="invalid-feedback">
+                        <div *ngIf="formVale.member.errors.required">Member is required</div>
+                    </div>
                 </div>
                 <div class="col-md-3">
-                    <label for="inputPassword4">Password</label>
-                    <select class='form-select'  id="inputPassword4" formControlName="member" #mySelect
-                        (change)='onOptionsSelected(mySelect.value)'>
-                        <option class='option' *ngFor='let option of memberList' [value]="option._id">
-                            {{option.username}}</option>
+                    <label for="planlist">Plan</label>
+                    <select class='form-select' id="planlist" formControlName="plan" #plan
+                        (change)='onOptionsPlan(plan.value)'
+                        [ngClass]="{ 'is-invalid': formVale.plan.touched && formVale.plan.errors }">
+                        <option class='option' *ngFor='let option of planList' [value]="option._id">
+                            {{option.name}}</option>
                     </select>
+                    <div *ngIf="formVale.plan.touched && formVale.plan.errors" class="invalid-feedback">
+                        <div *ngIf="formVale.plan.errors.required">Plan is required</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label>Start Date</label>
+                    <input type="date" [min]="todayDate"  (change)="dateStartDate($event)" formControlName="startDate" class="form-control"
+                        [ngClass]="{ 'is-invalid': formVale.startDate.touched && formVale.startDate.errors }" />
+                    <div *ngIf="formVale.startDate.touched && formVale.startDate.errors" class="invalid-feedback">
+                        <div *ngIf="formVale.startDate.errors.required">Start Date is required</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label>End Date</label>
+                    <input type="date" formControlName="endDate" class="form-control"
+                    [min]="endDate" 
+                        [ngClass]="{ 'is-invalid': formVale.endDate.touched && formVale.endDate.errors }" />
+                    <div *ngIf="formVale.endDate.touched && formVale.endDate.errors" class="invalid-feedback">
+                        <div *ngIf="formVale.endDate.errors.required">End Date is required</div>
+                    </div>
                 </div>
             </div>
             <div class="display-center">
-                <button class="nextBtn" type="button" (click)="cancelCreate()">
+                <button class="btn btn-outline-secondary" type="button" (click)="cancelCreate()">
                     <span class="btnText">Cancel</span>
                 </button>
-                <button class="nextBtn m-l-10" type="button" (click)="createMember()">
+                <button class="btn btn-outline-primary m-l-10" type="button" (click)="createMember()">
                     <span class="btnText">Save</span>
                 </button>
             </div>

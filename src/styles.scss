@@ -19,6 +19,7 @@
 
     --light: #f9f9f9;
     --blue: #3c91e6;
+    --cancel:#5c636a;
     --light-blue: #cfe8ff;
     --grey: #eee;
     --drak-grey: #aaaaaa;
@@ -505,6 +506,9 @@ ul.side-menu {
     background-color: var(--light);
 }
 
+.form-select{
+    background-color: var(--light);
+}
 .form-container form .title{
     display: block;
     font-size: 16px;
@@ -563,12 +567,12 @@ ul.side-menu {
     height: 35px;
     max-width: 100px;
     width: 100%;
-    border: none;
+    // border: none;
     outline: none;
-    color: var(--light) !important;
+    // color: var(--light) !important;
     border-radius: 5px;
     margin: 25px 0;
-    background: var(--blue);
+    // background: var(--blue);
     transition: all 0.3s linear;
     cursor: pointer;
 }
@@ -582,6 +586,9 @@ ul.side-menu {
 
 .form-container form button:hover{
     background: var(--blue);
+}
+.form-container form .btn-outline-secondary:hover{
+    background: var(--cancel);
 }
 .m-r-10{
     margin-right: 10px;
@@ -681,4 +688,7 @@ $fm-nunito: 'Nunito Sans', sans-serif;
 }
 #subMenu{
     display: none;
+}
+.form-select.is-invalid:not([multiple]):not([size]){
+    --bs-form-select-bg-icon: none !important;
 }

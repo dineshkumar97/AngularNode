@@ -69,7 +69,7 @@ export class EquipmentListComponent implements OnInit {
         this.toaster.showSuccess(posts.message);
       },
       error: (error: any) => {
-        this.toaster.showError(error);
+        this.toaster.showError(error.error.message);
       },
     });
   }

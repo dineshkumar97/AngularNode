@@ -102,7 +102,7 @@ export class EnquiryListComponent implements OnInit {
             this.toaster.showSuccess(posts.message);
           },
           error: (error) => {
-            this.toaster.showError(error.message);
+            this.toaster.showError(error.error.message);
           },
         });
       } else {
@@ -119,7 +119,7 @@ export class EnquiryListComponent implements OnInit {
                this.toaster.showSuccess(posts.message);
           },
           error: (error) => {
-            this.toaster.showError(error.message);
+            this.toaster.showError(error.error.message);
           },
         });
       }

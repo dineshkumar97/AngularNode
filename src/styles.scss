@@ -54,9 +54,7 @@ body.dark {
   margin: 0;
 }
 
-.m-l-10 {
-  margin-left: 10px !important;
-}
+
 
 .m-t-50 {
   margin-top: 50px;
@@ -158,7 +156,7 @@ ul.side-menu {
   padding-left: 0 !important;
 }
 
-.sidebar.hide ~ .content {
+.sidebar.hide~.content {
   width: calc(100% - 60px);
   left: 60px;
 }
@@ -318,7 +316,7 @@ ul.side-menu {
   transition: 0.3s ease;
 }
 
-.content nav #switch-mode:checked + .switch-mode::before {
+.content nav #switch-mode:checked+.switch-mode::before {
   left: calc(100% - (25px - 4px) - 2px);
 }
 
@@ -368,9 +366,7 @@ ul.side-menu {
   background-image: none !important;
 }
 
-.m-l-10 {
-  margin-left: 10px;
-}
+
 
 .curor-pointer {
   cursor: pointer;
@@ -390,9 +386,6 @@ ul.side-menu {
   justify-content: center;
 }
 
-.m-r-10 {
-  margin-right: 10px;
-}
 
 .radio-btn {
   margin-top: 5px !important;
@@ -506,6 +499,7 @@ $fm-nunito: "Nunito Sans", sans-serif;
   gap: 16px;
   margin-bottom: 24px;
 }
+
 .m-header h3 {
   font-size: 1.5rem;
 }
@@ -578,6 +572,7 @@ $fm-nunito: "Nunito Sans", sans-serif;
   border-color: var(--delete-icon-red) !important;
   background-color: var(--delete-icon-light) !important;
 }
+
 .btn-outline-primary {
   font-weight: 100 !important;
 }

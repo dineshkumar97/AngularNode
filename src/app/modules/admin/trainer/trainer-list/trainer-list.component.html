@@ -33,14 +33,16 @@
                     <td>{{trainer.address}}</td>
                     <td>{{trainer.createdDate | date: 'dd-MMM-yyyy'}}</td>
                     <td><i class="fas fa-edit btn-outline-primary curor-pointer" (click)="editTrainer(trainer)"></i>
-                        <i class="fa-solid fa-trash btn-outline-danger m-l-10 curor-pointer"
+                        <i class="fa-solid fa-trash btn-outline-danger ml-2 curor-pointer"
                             (click)="confirmationDelete(trainer)"></i>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-
+    <div *ngIf="!trainerList?.length" class="text-center">
+        <span> No data found...</span>
+    </div>
 
 </div>
 <ng-template #confirmation let-c="close" let-d="dismiss">

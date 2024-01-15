@@ -26,6 +26,10 @@ export class LoginService {
     return this.http.get<any>(`${environment.apiBaseUrl}/getUserDetails`);
   }
 
+  sideMenuList(): Observable<any> {
+    return this.http.get<any>(`${environment.apiBaseUrl}/sideMenu/getAllSideMenu`);
+  }
+
 
 
 }

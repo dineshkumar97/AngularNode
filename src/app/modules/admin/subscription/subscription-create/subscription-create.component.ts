@@ -104,7 +104,6 @@ export class SubscriptionCreateComponent implements OnInit {
 
   public createMember(): void {
     if (this.subcriptionForm.invalid) {
-      console.log('onk')
       this.subcriptionForm.markAllAsTouched();
       return;
     } else {
@@ -131,7 +130,6 @@ export class SubscriptionCreateComponent implements OnInit {
           },
         });
       } else {
-        console.log('subcriptionParticularDetails',this.subcriptionParticularDetails)
         const json = {
           member: {
             id: this.subcriptionParticularDetails.member.id,

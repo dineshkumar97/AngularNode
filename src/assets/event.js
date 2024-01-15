@@ -5,7 +5,6 @@ function sideMenuchangeList() {
     sidemenu.forEach((item) => {
         let li = item.parentElement;
         item.addEventListener('click', () => {
-            console.log('o')
             sidemenu.forEach((link) => {
                 link.parentElement.classList.remove('active');
             });
@@ -40,7 +39,6 @@ function topBarToggle() {
 function profileToggle() {
     let swithMode = document.getElementById('subMenu');
     swithMode.classList.toggle('open-menu')
-    console.log('test')
 }
 
 

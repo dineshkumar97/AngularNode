@@ -1,7 +1,8 @@
 <div class="m-container">
     <div class="m-header">
         <h3>Subscription List</h3>
-        <button class="btn btn-outline-primary btn-sm ml-1" (click)="createPlan()">Add Subscription</button>
+        <button class="btn btn-outline-primary btn-sm ml-1" (click)="createPlan()"><i class="fas fa-add"></i> Add
+        </button>
     </div>
     <div class="table-responsive">
         <table class="m-table">
@@ -25,8 +26,10 @@
                     <td>{{subscription.plan.text}}</td>
                     <td>{{subscription.startDate | date: 'dd-MMM-yyyy'}}</td>
                     <td>{{subscription.endDate | date: 'dd-MMM-yyyy'}}</td>
-                    <td><i class="fas fa-edit btn-outline-primary curor-pointer" (click)="editSubscription(subscription)"></i>
-                        <i class="fa-solid fa-trash btn-outline-danger m-l-10 curor-pointer" (click)="confirmationDelete(subscription)"></i>
+                    <td><i class="fas fa-edit btn-outline-primary curor-pointer"
+                            (click)="editSubscription(subscription)"></i>
+                        <i class="fa-solid fa-trash btn-outline-danger m-l-10 curor-pointer"
+                            (click)="confirmationDelete(subscription)"></i>
                     </td>
                 </tr>
             </tbody>

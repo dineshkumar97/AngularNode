@@ -40,7 +40,6 @@ export class EquipmentListComponent implements OnInit {
       },
       error: (error: any) => {
         // this.errorMessage = error;
-        console.log(error)
       },
     });
   }

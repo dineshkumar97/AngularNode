@@ -4,48 +4,11 @@
         <span class="text">Admin Panels</span>
     </a>
     <ul class="side-menu top" (click)="sideMenuChange()">
-        
-        <li *ngFor="let menu of menus">
+        <li *ngFor="let menu of sideMenuList">
             <a class="nav-link" [routerLink]="menu.path">
                 <i [class]="menu.icon"></i>
                 <span class="text">{{menu.name}}</span>
 
-            </a>
-        </li>
-        <li>
-            <a class="nav-link" [routerLink]="'enquiry'">
-                <i class="fa-solid fa-chalkboard-user"></i>
-                <span class="text">Enquiry</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link" [routerLink]="'plan'">
-                <i class="fa-solid fa-sack-dollar"></i>
-                <span class="text">Plan</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link" [routerLink]="'member'">
-                <i class="fa-solid fa-landmark"></i>
-                <span class="text">Member</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link" [routerLink]="'subscription'">
-                <i class="fa-solid fa-users-line"></i>
-                <span class="text">Subscription</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link" [routerLink]="'equipment'">
-                <i class="fa-solid fa-dumbbell"></i>
-                <span class="text">Equipment</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link" [routerLink]="'trainer'">
-                <i class="fa-solid fa-user-group"></i>
-                <span class="text">Trainer</span>
             </a>
         </li>
     </ul>

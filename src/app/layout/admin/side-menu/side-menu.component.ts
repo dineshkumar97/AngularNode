@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Menu } from 'src/app/models/menu';
+import { LoginService } from '../../login.service';
 declare var sideMenuchangeList: any;
 declare var topBarToggle: any;
 declare var switchToggle: any;
@@ -11,11 +12,20 @@ declare var profileToggle: any;
   styleUrls: ['./side-menu.component.scss']
 })
 export class SideMenuComponent implements OnInit {
-  menus: Menu[] = [{ name: 'Dashboard', icon: 'fa-solid fa-gauge', path: 'dashboard', displayOrder: 1 },
-  { name: 'Dashboard', icon: 'fa-solid fa-gauge', path: 'dashboard', displayOrder: 1 },
-  { name: 'Dashboard', icon: 'fa-solid fa-gauge', path: 'dashboard', displayOrder: 1 }];
-  constructor(private router: Router) { }
+  sideMenuList: Menu[];
+  constructor(private router: Router,private loginService:LoginService) { }
+
   ngOnInit(): void {
+    this.inilization();
+  }
+
+  public inilization():void{
+    this.loadSideMenu();
+  }
+  public loadSideMenu():void{
+    this.loginService.sideMenuList().subscribe((response:any)=>{
+      this.sideMenuList = response.message;
+    });
   }
 
   sideMenuChange() {
@@ -37,7 +47,6 @@ export class SideMenuComponent implements OnInit {
   routingEvent(event: any) {
     if (event == 'member') {
       this.router.navigate(['/member/member-list'])
-      console.log('me')
     } else if (event == 'Enquiry') {
       this.router.navigate(['/enquiry/enquiry-list'])
     } else if (event == 'Pricing') {

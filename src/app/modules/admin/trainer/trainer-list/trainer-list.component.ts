@@ -19,7 +19,6 @@ export class TrainerListComponent implements OnInit {
   public trainerList: any;
 
   ngOnInit(): void {
-    console.log('trainer')
     this.initilization();
   }
 
@@ -37,7 +36,6 @@ export class TrainerListComponent implements OnInit {
       },
       error: (error) => {
         // this.errorMessage = error;
-        console.log(error)
       },
     });
   }

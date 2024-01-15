@@ -1,7 +1,8 @@
 <div class="m-container">
     <div class="m-header">
         <h3>Equipment List </h3>
-        <button class="btn btn-outline-primary btn-sm ml-1" (click)="createequipment()">Add Equipment</button>
+        <button class="btn btn-outline-primary btn-sm ml-1" (click)="createequipment()"><i class="fas fa-add"></i> Add
+        </button>
     </div>
     <div class="table-responsive">
         <table class="m-table">
@@ -36,7 +37,8 @@
                     <td>{{equipment.vendorContact }}</td>
                     <td>{{equipment.vendorAddress }}</td>
                     <td><i class="fas fa-edit btn-outline-primary curor-pointer" (click)="editequipment(equipment)"></i>
-                        <i class="fa-solid fa-trash btn-outline-danger m-l-10 curor-pointer" (click)="confirmationDelete(equipment)"></i>
+                        <i class="fa-solid fa-trash btn-outline-danger m-l-10 curor-pointer"
+                            (click)="confirmationDelete(equipment)"></i>
                     </td>
                 </tr>
             </tbody>

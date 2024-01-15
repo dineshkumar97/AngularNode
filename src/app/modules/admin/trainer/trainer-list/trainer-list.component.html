@@ -1,7 +1,8 @@
 <div class="m-container">
     <div class="m-header">
         <h3>Trainer List </h3>
-        <button class="btn btn-outline-primary btn-sm ml-1" (click)="createTrainer()">Add Trainer</button>
+        <button class="btn btn-outline-primary btn-sm ml-1" (click)="createTrainer()"><i class="fas fa-add"></i> Add
+        </button>
     </div>
     <div class="table-responsive">
         <table class="m-table">
@@ -39,9 +40,7 @@
             </tbody>
         </table>
     </div>
-    <div *ngIf="!trainerList?.length" class="text-center">
-        <span> No data found...</span>
-    </div>
+
 
 </div>
 <ng-template #confirmation let-c="close" let-d="dismiss">

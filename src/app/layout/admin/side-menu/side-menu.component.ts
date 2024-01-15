@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Menu } from 'src/app/models/menu';
 declare var sideMenuchangeList: any;
 declare var topBarToggle: any;
 declare var switchToggle: any;
@@ -10,7 +11,9 @@ declare var profileToggle: any;
   styleUrls: ['./side-menu.component.scss']
 })
 export class SideMenuComponent implements OnInit {
-
+  menus: Menu[] = [{ name: 'Dashboard', icon: 'fa-solid fa-gauge', path: 'dashboard', displayOrder: 1 },
+  { name: 'Dashboard', icon: 'fa-solid fa-gauge', path: 'dashboard', displayOrder: 1 },
+  { name: 'Dashboard', icon: 'fa-solid fa-gauge', path: 'dashboard', displayOrder: 1 }];
   constructor(private router: Router) { }
   ngOnInit(): void {
   }

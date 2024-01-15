@@ -4,36 +4,12 @@
         <span class="text">Admin Panels</span>
     </a>
     <ul class="side-menu top" (click)="sideMenuChange()">
+        
+        <li *ngFor="let menu of menus">
+            <a class="nav-link" [routerLink]="menu.path">
+                <i [class]="menu.icon"></i>
+                <span class="text">{{menu.name}}</span>
 
-        <!-- <li>
-            <a class="nav-link" (click)="routingEvent('About')">
-                <i class="fab fa-slack"></i>
-                <span class="text">About</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link" (click)="routingEvent('Pricing')">
-                <i class="fab fa-slack"></i>
-                <span class="text">Plan</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link">
-                <i class="fab fa-slack"></i>
-                <span class="text">Classes / Schedule</span>
-            </a>
-        </li>
-        <li>
-            <a class="nav-link">
-                <i class="fab fa-slack"></i>
-                <span class="text">Contact us</span>
-            </a>
-        </li> -->
-        <li>
-            <a class="nav-link" [routerLink]="'dashboard'">
-                <i class="fa-solid fa-gauge"></i>
-                <span class="text">Dashboard</span>
-                
             </a>
         </li>
         <li>
@@ -61,7 +37,7 @@
             </a>
         </li>
         <li>
-            <a class="nav-link"  [routerLink]="'equipment'">
+            <a class="nav-link" [routerLink]="'equipment'">
                 <i class="fa-solid fa-dumbbell"></i>
                 <span class="text">Equipment</span>
             </a>

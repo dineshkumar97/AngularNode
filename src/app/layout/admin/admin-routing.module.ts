@@ -39,6 +39,10 @@ const routes: Routes = [
       path: 'subscription',
       loadChildren: () => import('../../modules/admin/subscription/subscription.module').then(m => m.SubscriptionModule), canActivate: [AuthGuard]
     },
+    {
+      path: 'attendance',
+      loadChildren: () => import('../../modules/admin/attendance/attendance.module').then(m => m.AttendanceModule), canActivate: [AuthGuard]
+    },
     ]
   }
 ];

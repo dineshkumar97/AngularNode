@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AttendanceRoutingModule } from './attendance-routing.module';
 import { AttendanceListComponent } from './attendance-list/attendance-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { AttendanceListComponent } from './attendance-list/attendance-list.compo
   ],
   imports: [
     CommonModule,
-    AttendanceRoutingModule
+    AttendanceRoutingModule,
+    FormsModule
   ]
 })
 export class AttendanceModule { }

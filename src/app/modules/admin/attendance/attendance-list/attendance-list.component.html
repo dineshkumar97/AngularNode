@@ -1,1 +1,35 @@
-<p>attendance-list works!</p>
+<div class="m-container">
+    <div class="m-header">
+        <h3>Attendance List </h3>
+        <button class="btn btn-outline-primary btn-sm ml-1"><i class="fas fa-add"></i> Add
+        </button>
+    </div>
+    <!-- <div class="table-responsive">
+        <table class="m-table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>User Name</th>
+                    <th>Mobile No.</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Enquiry Date</th>
+                    <th>Enquiry Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+           
+        </table>
+    </div> -->
+
+    <div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Member Search</label>
+                <input type="text" placeholder="search Member list"
+                (keyup.enter)="searchMemberList()"
+                [(ngModel)]="searchValue" (focusout)="searchMemberList()" class="form-control" />
+            </div>
+        </div>
+    </div>

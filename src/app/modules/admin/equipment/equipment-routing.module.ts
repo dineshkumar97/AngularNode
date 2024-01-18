@@ -4,9 +4,9 @@ import { EquipmentListComponent } from './equipment-list/equipment-list.componen
 import { EquipmentCreateComponent } from './equipment-create/equipment-create.component';
 
 const routes: Routes = [
-  { path: '', component: EquipmentListComponent },
-  { path: 'create', component: EquipmentCreateComponent },
-  { path: 'update/:id', component: EquipmentCreateComponent },
+  { path: '', component: EquipmentListComponent,title: 'Equipment'},
+  { path: 'create', component: EquipmentCreateComponent ,title: 'Equipment Create'},
+  { path: 'update/:id', component: EquipmentCreateComponent ,title: 'Equipment Update'},
 ];
 
 @NgModule({

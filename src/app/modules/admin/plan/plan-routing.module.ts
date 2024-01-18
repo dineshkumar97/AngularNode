@@ -4,9 +4,9 @@ import { PlanListComponent } from './plan-list/plan-list.component';
 import { PlanCreateComponent } from './plan-create/plan-create.component';
 
 const routes: Routes = [
-  { path: '', component: PlanListComponent },
-  { path: 'create', component: PlanCreateComponent },
-  { path: 'update/:id', component: PlanCreateComponent },
+  { path: '', component: PlanListComponent ,title: 'Plan'},
+  { path: 'create', component: PlanCreateComponent ,title: 'Plan Create'},
+  { path: 'update/:id', component: PlanCreateComponent ,title: 'Plan Update'},
 ];
 
 @NgModule({
